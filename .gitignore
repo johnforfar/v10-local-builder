@@ -1,4 +1,15 @@
-ENGINEERING.md
-.aider.
-.lock
-.log
+# Nix
+flake.lock
+
+# Aider
+.aider.*
+
+# Logs
+*.log
+
+# Workspace
+.DS_Store
+node_modules/
+.next/
+dist/
+build/
