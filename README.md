@@ -17,14 +17,16 @@ nix develop
 # Type 'y' to allow the numtide binary cache
 ```
 
-### 3. Start "Vibe Coding" with DeepSeek
+### 3. Start "Vibe Coding" in ClaudeBox
 ```bash
 ./scripts/start-studio.sh
 ```
-*Architecture: DeepSeek-R1 (32b) | Editor: Qwen3-Coder (30b)*
+This launches a **sandboxed terminal** on port `8501`.
 
 ### 4. Build & Preview
-The AI will automatically run `./scripts/studio-test.sh` to validate your hardware app. Once built, you can preview it in a sub-second local MicroVM.
+1.  Navigate to `http://localhost:3000/builder` in your browser.
+2.  The left panel provides a **ClaudeBox terminal** for natural language app building.
+3.  The right panel shows a **live VNC preview** of your hardware app running in a local MicroVM.
 
 ### 5. Deploy to Bare Metal
 ```bash

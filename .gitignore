@@ -8,6 +8,8 @@ flake.lock
 *.log
 
 # Workspace
+.session_uuid
+projects/
 .DS_Store
 node_modules/
 .next/
@@ -15,3 +17,4 @@ dist/
 build/
 
 ENGINEERING.md
+.aider*
