@@ -38,7 +38,9 @@ ttyd -p 3001 -W -t fontSize=14 -t theme='{"background":"#000000", "foreground":"
             echo "--- V10 SESSION ACTIVE: $UUID ---"
             # Refresh display bridge to align symlinks and session.json with current UUID
             "$(pwd)/../../scripts/start-app-native.sh" > /dev/null 2>&1 &
-            cd "$PROJECT_PATH" && aider --model "ollama/glm-4.7-flash:q4_K_M" --map-tokens 0 --no-stream --edit-format whole --no-auto-commits --yes-always --auto-test --test-cmd "../../scripts/boot-vm.sh"
+            # START AIDER: We add a short sleep to allow the display server to initialize the folder
+            sleep 2
+            cd "$PROJECT_PATH" && aider --model "ollama/glm-4.7-flash:q4_K_M" --map-tokens 0 --no-stream --edit-format whole --no-auto-commits --yes-always --auto-test --test-cmd "../../scripts/studio-test.sh" --subtree-only --no-git
             echo "--- SESSION ENDED or RESET DETECTED ---"
             cd ../..
             sleep 1
